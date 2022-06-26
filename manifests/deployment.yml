@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksdemo-cac4"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksdemo-cac4"
+  template:
+    metadata:
+      labels:
+        app: "aksdemo-cac4"
+    spec:
+      containers:
+        - name: "aksdemo-cac4"
+          image: "mgwperf1.azurecr.io/aksdemo"
+          ports:
+          - containerPort: 80

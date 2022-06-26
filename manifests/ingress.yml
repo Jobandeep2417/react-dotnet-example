@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "aksdemo-cac4"
+    labels:
+        app: "aksdemo-cac4"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: aksdemo9fc2-aksdemo-cac4.3f904fc4d48e4e2493cf.centralindia.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "aksdemo-cac4"
+                servicePort: 80
